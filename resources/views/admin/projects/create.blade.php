@@ -16,8 +16,9 @@
                         </div>
                     @endif
 
-                    <div class="card p-2">
-                        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
+                    <div class="card p-2 h-500">
+                        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data"
+                            class="scrollbar" id="style-15">
                             @csrf
 
                             <div class="mb-3">

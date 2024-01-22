@@ -23,48 +23,52 @@
                 </form>
             </div>
             <div>
-                <table class="table table-striped">
+                <div class="card p-2 h-500">
+                    <div class="scrollbar" id="style-15">
+                        <table class="table table-striped">
 
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($technologies as $technology)
-                            <tr>
-                                <td>
-                                    <a href="{{ route('admin.technologies.show', $technology->slug) }}">
-                                        {{ $technology->name }}
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{{ route('admin.technologies.edit', $technology->slug) }}"
-                                        class="link-secondary">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <form action="{{ route('admin.technologies.destroy', $technology->slug) }}"
-                                        method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="delete-button btn btn-danger ms-3"
-                                            data-item-title="{{ $technology->name }}">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @empty
-                            <tr>
-                                <td colspan="3">No technologies</td>
-                            </tr>
-                        @endforelse
-                    </tbody>
-                </table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($technologies as $technology)
+                                    <tr>
+                                        <td>
+                                            <a href="{{ route('admin.technologies.show', $technology->slug) }}">
+                                                {{ $technology->name }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('admin.technologies.edit', $technology->slug) }}"
+                                                class="link-secondary">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('admin.technologies.destroy', $technology->slug) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="delete-button btn btn-danger ms-3"
+                                                    data-item-title="{{ $technology->name }}">
+                                                    <i class="fa-solid fa-trash-can"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="3">No technologies</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

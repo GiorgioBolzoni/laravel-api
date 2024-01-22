@@ -11,7 +11,7 @@
                 {{ session()->get('message') }}
             </div>
         @endif
-        <div class="h-500 rounded-2">
+        <div class="h-500 rounded-2 card p-2">
             <div class="scrollbar" id="style-15">
                 <table class="table table-striped ">
                     <thead class="pY-2">
