@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Project;
 use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
 #aggiunto per slug
@@ -38,7 +38,7 @@ class ProjectSeeder extends Seeder
         // $name = substr($temp_name, 0, strpos($temp_name, '?')) . '.jpg';
         $name = Str::slug($name, '-') . '.jpg';
         $path = 'images/' . $name;
-        Storage::put('images/' . $name, $contents);
+        Storage::put('public/images/' . $name, $contents);
         return $path;
     }
 
